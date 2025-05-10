@@ -121,7 +121,7 @@ function App() {
 
   return (
     <div className="relative w-full" style={{ height: "100vh" }}>
-      <div className="absolute top-0 left-0 right-0 bottom-16 overflow-y-auto bg-gray-50 p-4 space-y-2">
+      <div className="absolute top-0 left-0 right-0 bottom-20 overflow-y-auto bg-gray-50 p-4 space-y-2">
         {messages.map((msg, idx) => (
           <div
             key={idx}
@@ -161,7 +161,7 @@ function App() {
         )}
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 border-t p-4 bg-white">
+      <div className="absolute bottom-0 left-0 right-0 p-4 bg-white border-t border-red-500 z-50">
         <div className="flex items-center space-x-2">
           <button className="p-2" onClick={handleCameraClick}>
             <Camera className="w-5 h-5" />
