@@ -120,7 +120,7 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col" style={{ height: "100vh" }}>
       <div className="flex-1 overflow-y-auto bg-gray-50 p-4 space-y-2">
         {messages.map((msg, idx) => (
           <div
