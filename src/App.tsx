@@ -121,49 +121,47 @@ function App() {
 
   return (
     <div className="flex flex-col h-screen">
-      <div className="flex-1 overflow-y-auto">
-        <div className="p-4 space-y-2 bg-gray-50 rounded-xl shadow-inner">
-          {messages.map((msg, idx) => (
-            <div
-              key={idx}
-              className="text-left bg-white p-2 rounded-xl shadow max-w-xs"
-            >
-              {msg.type === "text" && <p>{msg.content}</p>}
-              {msg.type === "image" && (
-                <img
-                  src={msg.content as string}
-                  alt="Uploaded"
-                  className="rounded-md"
-                />
-              )}
-              {msg.type === "audio" && (
-                <audio controls>
-                  <source src={msg.content as string} type="audio/webm" />
-                </audio>
-              )}
-            </div>
-          ))}
-          <div ref={endRef} />
-          {cameraStream && (
-            <div className="mt-4">
-              <video
-                ref={videoRef}
-                className="rounded-lg w-full max-w-sm"
-                autoPlay
-                muted
+      <div className="flex-1 overflow-y-auto bg-gray-50 p-4 space-y-2">
+        {messages.map((msg, idx) => (
+          <div
+            key={idx}
+            className="text-left bg-white p-2 rounded-xl shadow max-w-xs"
+          >
+            {msg.type === "text" && <p>{msg.content}</p>}
+            {msg.type === "image" && (
+              <img
+                src={msg.content as string}
+                alt="Uploaded"
+                className="rounded-md"
               />
-              <button
-                onClick={capturePhoto}
-                className="mt-2 bg-blue-500 text-white px-4 py-1 rounded-md"
-              >
-                Capture Photo
-              </button>
-            </div>
-          )}
-        </div>
+            )}
+            {msg.type === "audio" && (
+              <audio controls>
+                <source src={msg.content as string} type="audio/webm" />
+              </audio>
+            )}
+          </div>
+        ))}
+        <div ref={endRef} />
+        {cameraStream && (
+          <div className="mt-4">
+            <video
+              ref={videoRef}
+              className="rounded-lg w-full max-w-sm"
+              autoPlay
+              muted
+            />
+            <button
+              onClick={capturePhoto}
+              className="mt-2 bg-blue-500 text-white px-4 py-1 rounded-md"
+            >
+              Capture Photo
+            </button>
+          </div>
+        )}
       </div>
 
-      <div className="p-4 border-t">
+      <div className="border-t p-4">
         <div className="flex items-center space-x-2">
           <button className="p-2" onClick={handleCameraClick}>
             <Camera className="w-5 h-5" />
