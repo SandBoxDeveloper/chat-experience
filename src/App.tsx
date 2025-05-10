@@ -120,8 +120,8 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col" style={{ height: "100vh" }}>
-      <div className="flex-1 overflow-y-auto bg-gray-50 p-4 space-y-2">
+    <div className="relative w-full" style={{ height: "100vh" }}>
+      <div className="absolute top-0 left-0 right-0 bottom-16 overflow-y-auto bg-gray-50 p-4 space-y-2">
         {messages.map((msg, idx) => (
           <div
             key={idx}
@@ -161,7 +161,7 @@ function App() {
         )}
       </div>
 
-      <div className="border-t p-4">
+      <div className="absolute bottom-0 left-0 right-0 border-t p-4 bg-white">
         <div className="flex items-center space-x-2">
           <button className="p-2" onClick={handleCameraClick}>
             <Camera className="w-5 h-5" />
